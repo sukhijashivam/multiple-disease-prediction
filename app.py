@@ -11,9 +11,13 @@ import gdown
 import os
 
 # Define model directory
-BASE_DIR = "/content/multiple-disease-prediction"
+# ✅ Works both locally & on Streamlit Cloud
+import tempfile
+
+BASE_DIR = tempfile.gettempdir()
 MODEL_DIR = os.path.join(BASE_DIR, "saved_models")
 os.makedirs(MODEL_DIR, exist_ok=True)
+
 
 # --- Download large models from Google Drive if missing ---
 drive_files = {
