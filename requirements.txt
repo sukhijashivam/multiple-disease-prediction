@@ -1,6 +1,8 @@
 streamlit
 tensorflow
-opencv-python
+keras
 pillow
+numpy
 joblib
 gdown
+opencv-python-headless==4.10.0.84
