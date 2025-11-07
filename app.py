@@ -18,12 +18,13 @@ BASE_DIR = tempfile.gettempdir()
 MODEL_DIR = os.path.join(BASE_DIR, "saved_models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-
+#https://drive.google.com/file/d/1ZfgP53sorzuiSD3n0KbL3yAuG7uO1lyH/view?usp=sharing
 # --- Download large models from Google Drive if missing ---
 drive_files = {
     "breast_cancer_model_last.h5": "12Y5ju8ZyAifCAHiQiqQ635eSnifxdTJt",  # ✅ Breast model
-    "Brain_Tumor_Classification_model.h5": "1TVhY0DEDbehA3A-t8GzbiSDY5G0LAlXc"  # ✅ Brain model
+    "Brain_Tumor_Classification_model.h5": "1ZfgP53sorzuiSD3n0KbL3yAuG7uO1lyH"  # ✅ Brain model
 }
+#1TVhY0DEDbehA3A-t8GzbiSDY5G0LAlXc
 
 for name, file_id in drive_files.items():
     path = os.path.join(MODEL_DIR, name)
