@@ -332,12 +332,45 @@ elif "Heart" in menu:
 
 elif "Parkinson" in menu:
     st.markdown("<h2><span>🗣️ Parkinson’s Disease Prediction</span></h2>", unsafe_allow_html=True)
+    st.markdown("### Please enter the following voice-based features:")
+
+    # --- Parkinson’s dataset has 22 features ---
+    feature_names = [
+        "MDVP:Fo(Hz) - Average vocal fundamental frequency",
+        "MDVP:Fhi(Hz) - Maximum vocal fundamental frequency",
+        "MDVP:Flo(Hz) - Minimum vocal fundamental frequency",
+        "MDVP:Jitter(%) - Frequency variation in voice",
+        "MDVP:Jitter(Abs) - Absolute jitter value",
+        "MDVP:RAP - Relative Average Perturbation",
+        "MDVP:PPQ - Pitch Period Perturbation Quotient",
+        "Jitter:DDP - Degree of pitch perturbations",
+        "MDVP:Shimmer - Amplitude variation",
+        "MDVP:Shimmer(dB) - Shimmer in decibels",
+        "Shimmer:APQ3 - 3-point Amplitude Perturbation Quotient",
+        "Shimmer:APQ5 - 5-point Amplitude Perturbation Quotient",
+        "MDVP:APQ - Amplitude Perturbation Quotient",
+        "Shimmer:DDA - Degree of Amplitude Perturbation",
+        "NHR - Noise to Harmonics Ratio",
+        "HNR - Harmonics to Noise Ratio",
+        "RPDE - Recurrence Period Density Entropy",
+        "DFA - Signal fractal scaling exponent",
+        "spread1 - Nonlinear measure of fundamental frequency variation",
+        "spread2 - Variation in signal energy",
+        "D2 - Correlation dimension",
+        "PPE - Pitch period entropy"
+    ]
+
+    # --- Create inputs in 3 columns neatly ---
     cols = st.columns(3)
     inputs = []
-    for i in range(22):
+    for i, name in enumerate(feature_names):
         col = cols[i % 3]
         with col:
-            inputs.append(st.number_input(f"Feature {i+1}"))
+            inputs.append(st.number_input(name, format="%.5f"))
+
+    # --- Prediction button ---
     if st.button("🔍 Predict Parkinson’s"):
-        predict_parkinsons(inputs)
+        with st.spinner("Analyzing voice parameters..."):
+            predict_parkinsons(inputs)
+
 
