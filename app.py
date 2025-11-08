@@ -22,7 +22,10 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 # --- Download large models from Google Drive if missing ---
 drive_files = {
     "breast_cancer_model_last.h5": "12Y5ju8ZyAifCAHiQiqQ635eSnifxdTJt",  # ✅ Breast model
-    "Brain_Tumor_Classification_model.h5": "1TVhY0DEDbehA3A-t8GzbiSDY5G0LAlXc"  # ✅ Brain model
+    "Brain_Tumor_Classification_model.h5": "1TVhY0DEDbehA3A-t8GzbiSDY5G0LAlXc",  # ✅ Brain model
+    "diabetes_model.sav": "1yRAWrjY3B2K6s5X87ZdWduHChvgOu__V",
+    "heart_disease_model.sav": "12-9QP7AvEBHoEbbEEjFAG2JUkOYZwKJw",
+    "parkinsons_model.sav": "1sW9oZsmBVcpfPc0HVWozGpzgDasI1JWe"
 }
 #1TVhY0DEDbehA3A-t8GzbiSDY5G0LAlXc
 
