@@ -94,6 +94,27 @@ If you prefer not to install locally, you can easily run it on Colab
 # 3️⃣ Run the app
 !streamlit run app.py & npx localtunnel --port 8501
 
+💡 Future Enhancements
+
+Integration with real-time image capture (via webcam or DICOM upload).
+
+Add Explainability (XAI) using Grad-CAM for image-based predictions.
+
+Deploy via Docker + Streamlit Cloud for scalable hosting.
+
+Add disease probability charts & lifestyle recommendations.
+
+🧑‍💻 Author
+Shivam Sukhija
+💼 AI & Data Science Enthusiast
+📧 shivamsukhija002@gmail.com
+🌐 GitHub Profile- https://github.com/sukhijashivam
+
+⭐ Support & Contributions
+
+If you like this project, please ⭐ the repository and share it!
+Pull requests and suggestions for improvements are always welcome 🙌
+
 
 
 }
