@@ -11,10 +11,9 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip
 RUN pip install --upgrade pip
 
-# 🔥 Install exact compatible stack (no resolver fights)
+# Install exact compatible stack (no dependency resolver issues)
 RUN pip install \
     numpy==1.23.5 \
     protobuf==3.19.6 \
