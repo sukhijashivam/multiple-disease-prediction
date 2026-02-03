@@ -9,3 +9,5 @@ matplotlib==3.9.2
 gdown==5.2.0
 Pillow==10.2.0
 protobuf==3.20.3
+opencv-python-headless==4.10.0.84
+
