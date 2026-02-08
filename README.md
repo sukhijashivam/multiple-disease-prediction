@@ -15,20 +15,20 @@ This Streamlit web application predicts five different diseases using trained ML
 ## 📸 Screenshots
 
 ### Breast Cancer Detection
-![Breast Cancer Upload](screenshots/breast-cancer-upload.png)
-![Breast Cancer Result](screenshots/breast-cancer-result.png)
+![Breast Cancer Upload](Screenshots/breast-cancer-upload.png)
+![Breast Cancer Result](Screenshots/breast-cancer-result.png)
 
 ### Brain Tumor Detection
-![Brain Tumor](screenshots/brain-tumor.png)
+![Brain Tumor](Screenshots/brain-tumor.png)
 
 ### Diabetes Prediction
-![Diabetes](screenshots/diabetes.png)
+![Diabetes](Screenshots/diabetes.png)
 
 ### Heart Disease Prediction
-![Heart Disease](screenshots/heart-disease.png)
+![Heart Disease](Screenshots/heart-disease.png)
 
 ### Parkinson's Disease Prediction
-![Parkinson's](screenshots/parkinsons.png)
+![Parkinson's](Screenshots/parkinsons.png)
 
 ## 🛠️ Tech Stack
 
