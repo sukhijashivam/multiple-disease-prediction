@@ -25,7 +25,7 @@ This Streamlit web application predicts five different diseases using trained ML
 ![Diabetes](Screenshots/diabetes.png)
 
 ### Heart Disease Prediction
-![Heart Disease](Screenshots/heart-disease.png)
+![Heart Disease](Screenshots/heart.png)
 
 ### Parkinson's Disease Prediction
 ![Parkinson's](Screenshots/parkinsons.png)
