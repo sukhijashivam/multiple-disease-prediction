@@ -1,70 +1,51 @@
 # 🏥 Multiple Disease Prediction System
-AI-powered Streamlit app for multiple disease prediction using Machine Learning and Deep Learning
+
+AI-powered web application for predicting multiple diseases using Machine Learning and Deep Learning.
 
 ## 📋 About
-This project is a Streamlit-based web application that predicts multiple diseases using trained machine learning and deep learning models. The app can predict:
 
-- 🩷 **Breast Cancer** (using CNN - EfficientNet)
-- 🧠 **Brain Tumor** (using CNN)
-- 🍬 **Diabetes** (using Random Forest)
-- ❤️ **Heart Disease** (using Logistic Regression)
-- 🗣️ **Parkinson's Disease** (using SVM)
+This Streamlit web application predicts five different diseases using trained ML/DL models:
+
+- 🩷 **Breast Cancer** - CNN (EfficientNet)
+- 🧠 **Brain Tumor** - Custom CNN  
+- 🍬 **Diabetes** - Random Forest
+- ❤️ **Heart Disease** - Logistic Regression
+- 🗣️ **Parkinson's Disease** - SVM
 
 ## 📸 Screenshots
 
-### Main Interface
-<p align="center">
-  <img src="screenshots/breast-cancer-upload.png" alt="Breast Cancer Upload Interface" width="800"/>
-  <br/>
-  <em>Breast Cancer Detection - Upload mammogram image for analysis</em>
-</p>
+### Breast Cancer Detection
+![Breast Cancer Upload](screenshots/breast-cancer-upload.png)
+![Breast Cancer Result](screenshots/breast-cancer-result.png)
 
-### Disease Prediction Modules
+### Brain Tumor Detection
+![Brain Tumor](screenshots/brain-tumor.png)
 
-<p align="center">
-  <img src="screenshots/breast-cancer-result.png" alt="Breast Cancer Prediction Result" width="800"/>
-  <br/>
-  <em>Breast Cancer Prediction - Results with confidence score</em>
-</p>
+### Diabetes Prediction
+![Diabetes](screenshots/diabetes.png)
 
-<p align="center">
-  <img src="screenshots/brain-tumor.png" alt="Brain Tumor Detection" width="800"/>
-  <br/>
-  <em>Brain Tumor Detection - Upload MRI scan for prediction</em>
-</p>
+### Heart Disease Prediction
+![Heart Disease](screenshots/heart-disease.png)
 
-<p align="center">
-  <img src="screenshots/diabetes.png" alt="Diabetes Prediction" width="800"/>
-  <br/>
-  <em>Diabetes Prediction - Enter clinical parameters</em>
-</p>
-
-<p align="center">
-  <img src="screenshots/heart-disease.png" alt="Heart Disease Prediction" width="800"/>
-  <br/>
-  <em>Heart Disease Prediction - Input patient data</em>
-</p>
-
-<p align="center">
-  <img src="screenshots/parkinsons.png" alt="Parkinson's Disease Prediction" width="800"/>
-  <br/>
-  <em>Parkinson's Disease Prediction - Voice-based feature analysis</em>
-</p>
+### Parkinson's Disease Prediction
+![Parkinson's](screenshots/parkinsons.png)
 
 ## 🛠️ Tech Stack
+
 - **Python 3.12**
 - **Streamlit** - Web framework
 - **TensorFlow/Keras** - Deep learning models
 - **Scikit-learn** - Machine learning models
-- **Google Drive** - Model storage (for large .h5 files)
+- **Google Drive** - Model storage
 
 ## 📁 Project Structure
+
 ```
 multiple-disease-prediction/
 │
-├── app.py                      # Main Streamlit application
-├── requirements.txt            # Python dependencies
-├── Dockerfile                  # Docker configuration
+├── app.py                      # Main application
+├── requirements.txt            # Dependencies
+├── Dockerfile                  # Docker config
 │
 ├── saved_models/               # Pre-trained models
 │   ├── breast_cancer_model_last.h5
@@ -73,78 +54,60 @@ multiple-disease-prediction/
 │   ├── heart_disease_model.sav
 │   └── parkinsons_model.sav
 │
-├── screenshots/                # Application screenshots
-│   ├── breast-cancer-upload.png
-│   ├── breast-cancer-result.png
-│   ├── brain-tumor.png
-│   ├── diabetes.png
-│   ├── heart-disease.png
-│   └── parkinsons.png
+├── screenshots/                # App screenshots
 │
 └── temp_backup/                # Backup files
 ```
 
-## 🚀 Installation & Setup
+## 🚀 Installation
 
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-
-### Steps
-
-1. **Clone the repository**
+**1. Clone the repository**
 ```bash
 git clone https://github.com/sukhijashivam/multiple-disease-prediction.git
 cd multiple-disease-prediction
 ```
 
-2. **Install dependencies**
+**2. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Run the application**
+**3. Run the application**
 ```bash
 streamlit run app.py
 ```
 
-4. **Access the app**
-- Open your browser and go to `http://localhost:8501`
-- Models will auto-download from Google Drive on first run
+**4. Open browser**
+- Navigate to `http://localhost:8501`
+- Models auto-download on first run
 
 ## 💻 How to Use
 
 ### For Image-Based Predictions (Breast Cancer, Brain Tumor)
-1. Select the disease from the sidebar
-2. Upload the medical image (JPG, JPEG, PNG)
-   - Mammogram for Breast Cancer
-   - MRI scan for Brain Tumor
+1. Select disease from sidebar
+2. Upload medical image (JPG, JPEG, PNG)
 3. Click "Predict"
-4. View results with confidence scores
+4. View results with confidence score
 
 ### For Data-Based Predictions (Diabetes, Heart Disease, Parkinson's)
-1. Select the disease from the sidebar
-2. Enter the required medical parameters
+1. Select disease from sidebar
+2. Enter required medical parameters
 3. Click "Predict"
-4. View results and recommendations
+4. View prediction results
 
 ## 🧠 Models
 
-| Disease | Model Type | Input Type |
-|---------|-----------|------------|
-| Breast Cancer | CNN (EfficientNet) | Mammogram Image |
-| Brain Tumor | Custom CNN | MRI Image |
-| Diabetes | Random Forest | Clinical Data (8 features) |
-| Heart Disease | Logistic Regression | Clinical Data (13 features) |
-| Parkinson's | SVM | Voice Data (22 features) |
+| Disease | Model | Input Type | Features |
+|---------|-------|------------|----------|
+| Breast Cancer | CNN (EfficientNet) | Mammogram Image | Image classification |
+| Brain Tumor | Custom CNN | MRI Image | Image classification |
+| Diabetes | Random Forest | Clinical Data | 8 parameters |
+| Heart Disease | Logistic Regression | Clinical Data | 13 parameters |
+| Parkinson's | SVM | Voice Data | 22 features |
 
-## 📦 Model Storage
+## ⚠️ Disclaimer
 
-Large `.h5` model files (>100 MB) are stored on Google Drive and automatically downloaded when you first run the app using the `gdown` library.
-
-## ⚠️ Medical Disclaimer
-
-**IMPORTANT**: This application is for **educational purposes only**. It is NOT a substitute for professional medical advice, diagnosis, or treatment. Always consult qualified healthcare providers for medical decisions.
+**This application is for educational purposes only.** It is NOT a substitute for professional medical advice, diagnosis, or treatment. Always consult qualified healthcare providers for medical decisions.
 
 ## 👨‍💻 Author
 
@@ -154,12 +117,12 @@ Large `.h5` model files (>100 MB) are stored on Google Drive and automatically d
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License - feel free to use this project for learning and development.
 
 ## 🙏 Acknowledgments
 
-- Dataset sources from Kaggle
-- Streamlit for the web framework
+- Kaggle for datasets
+- Streamlit for the framework
 - TensorFlow and Scikit-learn communities
 
 ---
