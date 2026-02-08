@@ -54,7 +54,7 @@ multiple-disease-prediction/
 │   ├── heart_disease_model.sav
 │   └── parkinsons_model.sav
 │
-├── screenshots/                # App screenshots
+├── Screenshots/                # App screenshots
 │
 └── temp_backup/                # Backup files
 ```
