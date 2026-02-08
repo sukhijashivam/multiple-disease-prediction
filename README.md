@@ -1,9 +1,7 @@
 # 🏥 Multiple Disease Prediction System
-
 AI-powered Streamlit app for multiple disease prediction using Machine Learning and Deep Learning
 
 ## 📋 About
-
 This project is a Streamlit-based web application that predicts multiple diseases using trained machine learning and deep learning models. The app can predict:
 
 - 🩷 **Breast Cancer** (using CNN - EfficientNet)
@@ -12,8 +10,48 @@ This project is a Streamlit-based web application that predicts multiple disease
 - ❤️ **Heart Disease** (using Logistic Regression)
 - 🗣️ **Parkinson's Disease** (using SVM)
 
-## 🛠️ Tech Stack
+## 📸 Screenshots
 
+### Main Interface
+<p align="center">
+  <img src="screenshots/breast-cancer-upload.png" alt="Breast Cancer Upload Interface" width="800"/>
+  <br/>
+  <em>Breast Cancer Detection - Upload mammogram image for analysis</em>
+</p>
+
+### Disease Prediction Modules
+
+<p align="center">
+  <img src="screenshots/breast-cancer-result.png" alt="Breast Cancer Prediction Result" width="800"/>
+  <br/>
+  <em>Breast Cancer Prediction - Results with confidence score</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/brain-tumor.png" alt="Brain Tumor Detection" width="800"/>
+  <br/>
+  <em>Brain Tumor Detection - Upload MRI scan for prediction</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/diabetes.png" alt="Diabetes Prediction" width="800"/>
+  <br/>
+  <em>Diabetes Prediction - Enter clinical parameters</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/heart-disease.png" alt="Heart Disease Prediction" width="800"/>
+  <br/>
+  <em>Heart Disease Prediction - Input patient data</em>
+</p>
+
+<p align="center">
+  <img src="screenshots/parkinsons.png" alt="Parkinson's Disease Prediction" width="800"/>
+  <br/>
+  <em>Parkinson's Disease Prediction - Voice-based feature analysis</em>
+</p>
+
+## 🛠️ Tech Stack
 - **Python 3.12**
 - **Streamlit** - Web framework
 - **TensorFlow/Keras** - Deep learning models
@@ -21,7 +59,6 @@ This project is a Streamlit-based web application that predicts multiple disease
 - **Google Drive** - Model storage (for large .h5 files)
 
 ## 📁 Project Structure
-
 ```
 multiple-disease-prediction/
 │
@@ -29,14 +66,22 @@ multiple-disease-prediction/
 ├── requirements.txt            # Python dependencies
 ├── Dockerfile                  # Docker configuration
 │
-├── saved_models/              # Pre-trained models
+├── saved_models/               # Pre-trained models
 │   ├── breast_cancer_model_last.h5
 │   ├── Brain_Tumor_Classification_model_fixed.h5
 │   ├── diabetes_model.sav
 │   ├── heart_disease_model.sav
 │   └── parkinsons_model.sav
 │
-└── temp_backup/               # Backup files
+├── screenshots/                # Application screenshots
+│   ├── breast-cancer-upload.png
+│   ├── breast-cancer-result.png
+│   ├── brain-tumor.png
+│   ├── diabetes.png
+│   ├── heart-disease.png
+│   └── parkinsons.png
+│
+└── temp_backup/                # Backup files
 ```
 
 ## 🚀 Installation & Setup
@@ -70,7 +115,6 @@ streamlit run app.py
 ## 💻 How to Use
 
 ### For Image-Based Predictions (Breast Cancer, Brain Tumor)
-
 1. Select the disease from the sidebar
 2. Upload the medical image (JPG, JPEG, PNG)
    - Mammogram for Breast Cancer
@@ -79,7 +123,6 @@ streamlit run app.py
 4. View results with confidence scores
 
 ### For Data-Based Predictions (Diabetes, Heart Disease, Parkinson's)
-
 1. Select the disease from the sidebar
 2. Enter the required medical parameters
 3. Click "Predict"
@@ -106,7 +149,6 @@ Large `.h5` model files (>100 MB) are stored on Google Drive and automatically d
 ## 👨‍💻 Author
 
 **Shivam Sukhija**
-
 - GitHub: [@sukhijashivam](https://github.com/sukhijashivam)
 - Email: shivamsukhija002@gmail.com
 
