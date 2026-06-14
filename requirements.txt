@@ -7,6 +7,6 @@ numpy==2.0.2
 pandas==2.2.2
 matplotlib==3.10.0
 gdown==5.2.2
-Pillow==11.3.0
+Pillow==10.2.0
 opencv-python-headless==4.13.0.92
 rich==13.9.4
