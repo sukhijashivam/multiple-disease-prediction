@@ -49,13 +49,18 @@ class CompatInputLayer(keras.layers.InputLayer):
         super().__init__(**kwargs)
 
 # --- Load models (after ensuring they're downloaded) ---
+custom_objects = {
+    "InputLayer": CompatInputLayer,
+    "DTypePolicy": keras.mixed_precision.Policy,
+}
+
 breast_model = keras.models.load_model(
     os.path.join(MODEL_DIR, "breast_cancer_model_last.h5"),
-    custom_objects={"InputLayer": CompatInputLayer}
+    custom_objects=custom_objects
 )
 brain_model = keras.models.load_model(
     os.path.join(MODEL_DIR, "Brain_Tumor_Classification_model.h5"),
-    custom_objects={"InputLayer": CompatInputLayer}
+    custom_objects=custom_objects
 )
 diabetes_model = joblib.load(os.path.join(MODEL_DIR, "diabetes_model.sav"))
 heart_model = joblib.load(os.path.join(MODEL_DIR, "heart_disease_model.sav"))
