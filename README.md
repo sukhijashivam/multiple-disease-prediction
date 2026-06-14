@@ -1,4 +1,5 @@
 # 🏥 Multiple Disease Prediction System
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://multiple-disease-prediction-ad8hvas7nsmasidtzwrdry.streamlit.app/)
 
 AI-powered web application for predicting multiple diseases using Machine Learning and Deep Learning.
 
@@ -11,6 +12,9 @@ This Streamlit web application predicts five different diseases using trained ML
 - 🍬 **Diabetes** - Random Forest
 - ❤️ **Heart Disease** - Logistic Regression
 - 🗣️ **Parkinson's Disease** - SVM
+
+## 🌐 Live Demo
+👉 **[Try the app here](https://multiple-disease-prediction-ad8hvas7nsmasidtzwrdry.streamlit.app/)**
 
 ## 📸 Screenshots
 
