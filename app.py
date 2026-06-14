@@ -168,9 +168,9 @@ def safe_image_read(uploaded_file, target_size):
 # ---------------------- BEAUTIFIED IMAGE PREDICTIONS ----------------------
 def predict_breast_cancer(uploaded_file):
     class_labels = ["Benign", "Malignant", "Normal"]
-    img = Image.open(uploaded_file).convert("RGB").resize((224, 224))
+    img = Image.open(uploaded_file).convert("RGB").resize((128, 128))  # 224 → 128
     img_array = np.expand_dims(np.asarray(img, dtype=np.float32), axis=0)
-    img_array = keras.applications.efficientnet.preprocess_input(img_array)
+    img_array = img_array / 255.0  # Simple normalization instead of efficientnet preprocess
 
     preds = breast_model.predict(img_array)
     idx = np.argmax(preds[0])
@@ -215,7 +215,7 @@ def predict_breast_cancer(uploaded_file):
 
 def predict_brain_tumor(uploaded_file):
     class_labels = ['Pituitary', 'Meningioma', 'No Tumor', 'Glioma']
-    img_rgb = safe_image_read(uploaded_file, (128, 128))
+    img_rgb = safe_image_read(uploaded_file, (224, 224))
     img_array = np.array(img_rgb).astype("float32") / 255.0
     x = np.expand_dims(img_array, axis=0)
     preds = brain_model.predict(x)
