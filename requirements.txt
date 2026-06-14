@@ -8,4 +8,4 @@ matplotlib==3.9.2
 gdown==5.2.0
 Pillow==10.2.0
 opencv-python-headless==4.10.0.84
-keras==3.9.0
+keras==3.13.2
