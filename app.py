@@ -41,8 +41,8 @@ for name, file_id in drive_files.items():
 
 # --- Load models (after ensuring they're downloaded) ---
 
-breast_model = keras.models.load_model(os.path.join(MODEL_DIR, "breast_cancer_model_last.h5"))
-brain_model = keras.models.load_model(os.path.join(MODEL_DIR, "Brain_Tumor_Classification_model.h5"))
+breast_model = keras.models.load_model(os.path.join(MODEL_DIR, "breast_cancer_model_last.keras"))
+brain_model = keras.models.load_model(os.path.join(MODEL_DIR, "Brain_Tumor_Classification_model.keras"))
 diabetes_model = joblib.load(os.path.join(MODEL_DIR, "diabetes_model.sav"))
 heart_model = joblib.load(os.path.join(MODEL_DIR, "heart_disease_model.sav"))
 parkinsons_model = joblib.load(os.path.join(MODEL_DIR, "parkinsons_model.sav"))
