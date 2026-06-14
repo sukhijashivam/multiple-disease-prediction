@@ -177,7 +177,7 @@ def predict_breast_cancer(uploaded_file):
     conf = float(np.max(preds[0])) * 100
     label = class_labels[idx]
 
-    st.image(img, caption="", use_container_width=False, width=300)
+    st.image(img, caption="", width=300)
 
     color = "#00ffaa" if label.lower() in ["benign", "normal"] else "#ff4d4d"
     emoji = "💖" if label.lower() in ["benign", "normal"] else "⚠️"
@@ -223,7 +223,7 @@ def predict_brain_tumor(uploaded_file):
     conf = float(np.max(preds[0])) * 100
     result = class_labels[idx]
 
-    st.image(img_rgb, caption="", use_container_width=False, width=300)
+    st.image(img_rgb, caption="", width=300)
 
     is_tumor = result.lower() not in ["no tumor"]
     color = "#ff4d4d" if is_tumor else "#00ffaa"
