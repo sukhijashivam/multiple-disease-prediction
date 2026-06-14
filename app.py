@@ -18,6 +18,13 @@ BASE_DIR = tempfile.gettempdir()
 MODEL_DIR = os.path.join(BASE_DIR, "saved_models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
+# --- Remove old .h5 files if they exist (cleanup from previous deployments) ---
+for old_file in ["Brain_Tumor_Classification_model.h5", "breast_cancer_model_last.h5"]:
+    old_path = os.path.join(MODEL_DIR, old_file)
+    if os.path.exists(old_path):
+        os.remove(old_path)
+        print(f"🗑️ Removed old file: {old_file}")
+
 #https://drive.google.com/file/d/1ZfgP53sorzuiSD3n0KbL3yAuG7uO1lyH/view?usp=sharing
 # --- Download large models from Google Drive if missing ---
 drive_files = {
