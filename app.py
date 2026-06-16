@@ -218,7 +218,7 @@ def predict_breast_cancer(uploaded_file):
 def predict_brain_tumor(uploaded_file):
     class_labels = ['Pituitary', 'Meningioma', 'No Tumor', 'Glioma']
     img_rgb = safe_image_read(uploaded_file, (224, 224))
-    img_array = np.array(img_rgb).astype("float32") / 255.0
+    img_array = keras.applications.vgg16.preprocess_input(np.array(img_rgb).astype("float32"))
     x = np.expand_dims(img_array, axis=0)
     preds = brain_model.predict(x)
     idx = np.argmax(preds[0])
