@@ -168,7 +168,8 @@ def safe_image_read(uploaded_file, target_size):
 # ---------------------- BEAUTIFIED IMAGE PREDICTIONS ----------------------
 def predict_breast_cancer(uploaded_file):
     class_labels = ["Benign", "Malignant", "Normal"]
-    img = Image.open(uploaded_file).convert("RGB").resize((128, 128))
+    
+    img = Image.open(uploaded_file).convert("RGB").resize((224, 224))
     img_array = np.expand_dims(np.asarray(img, dtype=np.float32), axis=0)
     img_array = img_array / 255.0
     
