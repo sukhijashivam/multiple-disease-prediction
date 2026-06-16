@@ -28,7 +28,7 @@ for old_file in ["Brain_Tumor_Classification_model.h5", "breast_cancer_model_las
 #https://drive.google.com/file/d/1ZfgP53sorzuiSD3n0KbL3yAuG7uO1lyH/view?usp=sharing
 # --- Download large models from Google Drive if missing ---
 drive_files = {
-    "breast_final.keras": "1DKab19rg2uUfDl908NRYHEj5ZP_nOizY",
+    "breast_final_fixed.keras": "17jk1OD1-86wDZBehPpusBlk0SVnUEsoX",
     "brain_312.keras": "1SDuwgyaBTPxaladOyiHugtOQJMRLpdCX",
     "diabetes_model.sav": "1yRAWrjY3B2K6s5X87ZdWduHChvgOu__V",
     "heart_disease_model.sav": "12-9QP7AvEBHoEbbEEjFAG2JUkOYZwKJw",
@@ -48,7 +48,7 @@ for name, file_id in drive_files.items():
 
 # --- Load models (after ensuring they're downloaded) ---
 
-breast_model = keras.models.load_model(os.path.join(MODEL_DIR, "breast_final.keras"))
+breast_model = keras.models.load_model(os.path.join(MODEL_DIR, "breast_final_fixed.keras"))
 brain_model = keras.models.load_model(os.path.join(MODEL_DIR, "brain_312.keras"))
 diabetes_model = joblib.load(os.path.join(MODEL_DIR, "diabetes_model.sav"))
 heart_model = joblib.load(os.path.join(MODEL_DIR, "heart_disease_model.sav"))
