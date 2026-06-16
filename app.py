@@ -13,6 +13,7 @@ import os
 # Define model directory
 # ✅ Works both locally & on Streamlit Cloud
 import tempfile
+st.set_page_config(page_title="AI Health Diagnosis Suite", page_icon="🏥", layout="wide"
 
 BASE_DIR = tempfile.gettempdir()
 MODEL_DIR = os.path.join(BASE_DIR, "saved_models")
