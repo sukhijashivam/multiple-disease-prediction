@@ -171,7 +171,7 @@ def predict_breast_cancer(uploaded_file):
     
     img = Image.open(uploaded_file).convert("RGB").resize((224, 224))
     img_array = np.expand_dims(np.asarray(img, dtype=np.float32), axis=0)
-    img_array = img_array / 255.0
+    img_array = keras.applications.efficientnet.preprocess_input(img_array)
     
     preds = breast_model.predict(img_array)
     idx = np.argmax(preds[0])
