@@ -168,16 +168,17 @@ def safe_image_read(uploaded_file, target_size):
 # ---------------------- BEAUTIFIED IMAGE PREDICTIONS ----------------------
 def predict_breast_cancer(uploaded_file):
     class_labels = ["Benign", "Malignant", "Normal"]
-    img = Image.open(uploaded_file).convert("RGB").resize((128, 128))  # 224 → 128
+    img = Image.open(uploaded_file).convert("RGB").resize((128, 128))
     img_array = np.expand_dims(np.asarray(img, dtype=np.float32), axis=0)
-    img_array = img_array / 255.0  # Simple normalization instead of efficientnet preprocess
-
+    img_array = img_array / 255.0
+    
     preds = breast_model.predict(img_array)
     idx = np.argmax(preds[0])
     conf = float(np.max(preds[0])) * 100
     label = class_labels[idx]
-
-    st.image(img, caption="", width=300)
+    
+    # Debug - show all class probabilities
+    st.write(f"Benign: {preds[0][0]*100:.1f}% | Malignant: {preds[0][1]*100:.1f}% | Normal: {preds[0][2]*100:.1f}%")
 
     color = "#00ffaa" if label.lower() in ["benign", "normal"] else "#ff4d4d"
     emoji = "💖" if label.lower() in ["benign", "normal"] else "⚠️"
