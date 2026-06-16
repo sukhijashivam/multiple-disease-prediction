@@ -61,8 +61,7 @@ def load_models():
 breast_model, brain_model, diabetes_model, heart_model, parkinsons_model = load_models()
 
 
-# ---------------------- App Theme ----------------------
-st.set_page_config(page_title="AI Health Diagnosis Suite", page_icon="🏥", layout="wide")
+
 
 # Custom CSS
 st.markdown("""
