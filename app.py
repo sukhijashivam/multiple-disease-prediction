@@ -48,11 +48,16 @@ for name, file_id in drive_files.items():
 
 # --- Load models (after ensuring they're downloaded) ---
 
-breast_model = keras.models.load_model(os.path.join(MODEL_DIR, "breast_final_fixed.keras"))
-brain_model = keras.models.load_model(os.path.join(MODEL_DIR, "brain_312.keras"))
-diabetes_model = joblib.load(os.path.join(MODEL_DIR, "diabetes_model.sav"))
-heart_model = joblib.load(os.path.join(MODEL_DIR, "heart_disease_model.sav"))
-parkinsons_model = joblib.load(os.path.join(MODEL_DIR, "parkinsons_model.sav"))
+@st.cache_resource
+def load_models():
+    breast = keras.models.load_model(os.path.join(MODEL_DIR, "breast_final_fixed.keras"))
+    brain = keras.models.load_model(os.path.join(MODEL_DIR, "brain_312.keras"))
+    diabetes = joblib.load(os.path.join(MODEL_DIR, "diabetes_model.sav"))
+    heart = joblib.load(os.path.join(MODEL_DIR, "heart_disease_model.sav"))
+    parkinsons = joblib.load(os.path.join(MODEL_DIR, "parkinsons_model.sav"))
+    return breast, brain, diabetes, heart, parkinsons
+
+breast_model, brain_model, diabetes_model, heart_model, parkinsons_model = load_models()
 
 
 # ---------------------- App Theme ----------------------
